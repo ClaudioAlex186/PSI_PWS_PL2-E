@@ -9,9 +9,4 @@ class BoController extends Controller
         $this->renderView('bo','index');
     }
 
-    public function  login()
-    {
-        //devolve a vista de login
-        $this->renderView('login','login');
-    }
 }
