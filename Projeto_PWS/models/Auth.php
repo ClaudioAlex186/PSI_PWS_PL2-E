@@ -11,32 +11,25 @@ class Auth
         }
     }
 
-    public function getUserName()
+    public function CheckAuth($username,$password)
     {
-        if(isset($_SESSION['username'])){
-            return $_SESSION['username'];
-        }else
-            return '';
-    }
+        $user = User::find_by_username_and_password($username,$password);
 
-    public function CheckAuth($user,$pass)
-    {
-
-        $username='hugo';
-        $password='123';
-
-        if(($user == $username) && ($pass==$password))
+        if(is_null($user))
         {
-            $_SESSION["username"] = $username;
-            return true;
-        }else{
+            //atentcacao falhou
             return false;
+        }else{
+            $_SESSION['auth'] ['username'] = $user ->username;
+            $_SESSION['auth'] ['userid'] = $user ->id;
+            $_SESSION['auth'] ['userrole'] = $user ->role;
+            return true;
         }
     }
 
     public function IsLoggedIn()
     {
-        if(isset($_SESSION['username']))
+        if(isset($_SESSION['auth']))
         {
             return true;
         }else{
@@ -49,4 +42,37 @@ class Auth
 
         session_destroy();
     }
+
+    public function getUserName()
+    {
+        if($this->IsLoggedIn()){
+            return $_SESSION['auth'] ['username'];
+        }else
+            return '';
+    }
+
+    public function getUserId()
+    {
+        if($this->IsLoggedIn()){
+            return $_SESSION['auth'] ['userid'];
+        }else
+            return '';
+    }
+
+    public function getUserRole()
+    {
+        if($this->IsLoggedIn()){
+            return $_SESSION['auth'] ['userrole'];
+        }else
+            return '';
+    }
+
+    public function IsLoggedInAs($role=[])
+    {
+        if($this->IsLoggedIn()) {
+            $role=$this->getUserRole();
+            return in_array($role);
+        }
+    }
+
 }
