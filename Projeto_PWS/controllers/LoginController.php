@@ -15,19 +15,25 @@ class LoginController extends Controller
         $user = $this->getHTTPPostParam('username');
         $pass = $this->getHTTPPostParam('password');
 
-
         $auth = new Auth();
 
         if ($auth ->CheckAuth($user,$pass)){
-            echo 'logn com ok '.$auth->getUserName().' '.$auth->getUserId().' '.$auth->getUserRole();
-            //$this->redirectToRoute('plano','index');
+            $role= $auth->getUserRole();
+            switch ($role){
+                case 'admin':$this->redirectToRoute('bo','index');
+                    break;
+                case 'funcionario':$this->redirectToRoute('bo','index');
+                    break;
+                case 'cliente':$this->redirectToRoute('fo','index');
+                    break;
+            }
         }else{
-            echo 'utilzador não existe nao existe';
             $this->renderView('login','index',[],'login');
+            echo 'utilizador não existe nao existe';
 
         }
 
-        //$this-> renderView('auth','index');
+        $this->renderView('login','index',[],'login');
 
     }
 }

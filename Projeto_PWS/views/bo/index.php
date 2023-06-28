@@ -2,28 +2,7 @@
 <section class="content">
     <div class="container-fluid">
         <div class="col-sm-6">
-            <h3>Go to user</h3>
-            <p>
-                <a href="index.php?c=user&a=index" class="btn btn-info" role="button">Go to</a>
-            </p>
-        </div>
-        <div class="col-sm-6">
-            <h3>Go to empresa</h3>
-            <p>
-                <a href="index.php?c=empresa&a=index" class="btn btn-info" role="button">Go to</a>
-            </p>
-        </div>
-        <div class="col-sm-6">
-            <h3>Go to iva</h3>
-            <p>
-                <a href="index.php?c=iva&a=index" class="btn btn-info" role="button">Go to</a>
-            </p>
-        </div>
-        <div class="col-sm-6">
-            <h3>Go to servico</h3>
-            <p>
-                <a href="index.php?c=servico&a=index" class="btn btn-info" role="button">Go to</a>
-            </p>
+
         </div>
         <!-- Small boxes (Stat box) -->
         <div class="row">

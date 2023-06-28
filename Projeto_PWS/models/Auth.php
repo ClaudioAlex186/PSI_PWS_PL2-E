@@ -67,11 +67,11 @@ class Auth
             return '';
     }
 
-    public function IsLoggedInAs($role=[])
+    public function IsLoggedInAs($roles=[])
     {
         if($this->IsLoggedIn()) {
             $role=$this->getUserRole();
-            return in_array($role);
+            return in_array($role,$roles);
         }
     }
 
