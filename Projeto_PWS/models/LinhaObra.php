@@ -7,4 +7,7 @@ class LinhaObra extends \ActiveRecord\Model
         array('Folhaobra')
     );
 
+    static $has_many = array(
+        array('Servico')
+    );
 }

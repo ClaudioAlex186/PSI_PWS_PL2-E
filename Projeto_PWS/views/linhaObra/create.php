@@ -25,19 +25,16 @@
         <div class="col-sm-4 invoice-col">
             Cliente
             <address>
-                <a href="index.php?c=folhaObra&a=selectCliente"
-                   type="button" class="btn btn-primary  btn-info" role="button" style="margin-right: 5px;">Selecionar</a>
-                <strong></strong><br>
-                <br>
-                <br>
-                <br>
+                <strong>Nome:<?=$client->username?></strong><br>
+                <b>Email: <?=$client->email?></b><br>
+                <b>Nif: <?=$client->nif?></b><br>
 
             </address>
         </div>
         <!-- /.col -->
         <div class="col-sm-4 invoice-col">
-            <b>Data: --</b><br>
-            <b>Nº Folha de Obra: --</b>
+            <b>Data: <?=$fo->data?></b><br>
+            <b>Nº Folha de Obra: <?=$fo->id?></b>
         </div>
         <!-- /.col -->
     </div>
@@ -94,15 +91,15 @@
                 <table class="table">
                     <tr>
                         <th style="width:50%">Subtotal:</th>
-                        <td>-€</td>
+                        <td>--€</td>
                     </tr>
                     <tr>
                         <th>Iva (-%)</th>
-                        <td>-€</td>
+                        <td><?=$fo->ivatotal?>€</td>
                     </tr>
                     <tr>
                         <th>Total:</th>
-                        <td>-€</td>
+                        <td><?=$fo->valortotal?>€</td>
                     </tr>
                 </table>
             </div>

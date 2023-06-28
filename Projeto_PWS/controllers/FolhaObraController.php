@@ -4,12 +4,6 @@ require_once 'controllers/Controller.php';
 use Carbon\Carbon;
 class FolhaObraController extends Controller
 {
-    public function index()
-    {
-
-        //mostrar a vista index passando os dados por parâmetro
-        $this->renderView('folhaObra', 'index');
-    }
 
     public function create()
     {
@@ -46,4 +40,19 @@ class FolhaObraController extends Controller
         //mostrar a vista index passando os dados por parâmetro
         $this->renderView('folhaObra', 'selectCliente',['users'=>$users]);
     }
+    /*
+    public function atualizaValores()
+    {
+        foreach ($linhaObras as $linhaObra)
+        {
+            $somaValor +=;
+            $somaIva +=;
+            $somaSubtotal+=;
+        }
+        $fo->valor = $somaValor;
+        $fo->valoriva = $somaIva;
+        $fo->total = $somaSubtotal;
+        save;
+
+    }*/
 }
