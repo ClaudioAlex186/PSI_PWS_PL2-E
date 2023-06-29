@@ -7,9 +7,11 @@ class LinhaObraController extends Controller
     {
         $fo = Folhaobra::find($idFolhaObra);
         $client = User::find($fo->client_id);// testar $fo->user->username
+        $empresa = Empresa::first();
+        $funcionario = User::find($fo->user_id);
         $servicos = Servico::all();
         //mostrar a vista index passando os dados por parâmetro
-        $this->renderView('linhaObra', 'index',['fo'=>$fo, 'client' => $client,'servicos'=>$servicos]);
+        $this->renderView('linhaObra', 'index',['fo'=>$fo, 'client' => $client,'servicos'=>$servicos,'funcionario'=>$funcionario,'empresa'=>$empresa]);
     }
 
 
@@ -17,9 +19,11 @@ class LinhaObraController extends Controller
     {
         $fo = Folhaobra::find($idFolhaObra);
         $client = User::find($fo->client_id);
+        $empresa = Empresa::first();
+        $funcionario = User::find($fo->user_id);
         $servico = Servico::find($idServico);
         //mostrar a vista index passando os dados por parâmetro
-        $this->renderView('linhaObra', 'create',['fo'=>$fo, 'client' => $client,'servico'=>$servico]);
+        $this->renderView('linhaObra', 'create',['fo'=>$fo, 'client' => $client,'servico'=>$servico,'funcionario'=>$funcionario,'empresa'=>$empresa]);
 
     }
 

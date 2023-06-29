@@ -15,9 +15,12 @@
             Empresa
             <address>
                 <strong><?=APP_NAME ?></strong><br>
-                <br>
-                <br>
-                <br>
+                <b>Nome:<?=$empresa->designacaosocial?></b><br>
+                <b>Email: <?=$empresa->email?></b><br>
+                <b>Telefone:<?=$empresa->telefone?></b><br>
+                <b>Nif:<?=$empresa->nif?></b><br>
+                <b>Morada:<?= $empresa->morada ?></b><br>
+
 
             </address>
         </div>
@@ -28,7 +31,9 @@
                 <strong>Nome:<?=$client->username?></strong><br>
                 <b>Email: <?=$client->email?></b><br>
                 <b>Nif: <?=$client->nif?></b><br>
-
+                <b>Telefone: <?=$client->telefone?></b><br>
+                <b>Morada: <?=$client->morada?></b><br>
+                <b>Codigo Postal: <?=$client->codigopostal?></b><br>
             </address>
         </div>
         <!-- /.col -->
@@ -92,11 +97,14 @@
             <img src="public/img/credit/american-express.png" alt="American Express">
             <img src="public/img/credit/paypal2.png" alt="Paypal">
 
-            <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
-                Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem
-                plugg
-                dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
-            </p>
+            <div class="col-sm-4 invoice-col">
+                Funcionario
+                <address>
+                    <strong>Nome:<?=$funcionario->username?></strong><br>
+                    <b>Email: <?=$funcionario->email?></b><br>
+                    <b>Telefone: <?=$funcionario->telefone?></b><br>
+                </address>
+            </div>
         </div>
         <!-- /.col -->
         <div class="col-6">

@@ -10,7 +10,7 @@
                     <td><?=$servico->referencia?></td>
                     <td><?=$servico->descricao?></td>
                     <td><?=$servico->precohora?></td>
-                    <td><?= $servico->ivas_id ?></td>//percentagem do iva todo
+                    <td><?= $servico->ivas_id //percentagem do iva todo?></td>
                     <td>
                         <a href="index.php?c=servico&a=show&id=<?=$servico->id ?>"
                            class="btn btn-info" role="button">Show</a>
