@@ -29,7 +29,7 @@ class LoginController extends Controller
             }
         }else{
             $this->renderView('login','index',[],'login');
-            echo 'o utilizador não existe';
+            echo 'utilizador não existe nao existe';
 
         }
 
