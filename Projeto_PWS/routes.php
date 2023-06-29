@@ -59,7 +59,6 @@ return [
         'delete' => ['GET', 'ServicoController', 'delete'],
     ],
     'folhaObra' => [
-        'index' => ['GET', 'FolhaObraController', 'index'],
         'create' => ['GET', 'FolhaObraController', 'create'],
         'store' => ['GET', 'FolhaObraController', 'store'],
         'selectCliente' => ['GET', 'FolhaObraController', 'selectCliente'],

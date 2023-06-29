@@ -60,18 +60,18 @@
                     <tr>
                         <td><?=$servico->referencia?></td>
                         <td><?=$servico->descricao?></td>
-                        <td><?$lo->quantidade ?></td>
+                        <td><?=$lo->quantidade ?></td>
                         <td><?=$servico->precohora?></td>
                         <td><?=$servico->ivas_id?></td>
-                        <td><?$servico->subtotal ?></td>
+                        <td><?=$servico->valor ?></td>
                     </tr>
-                <?php } */?>
+                <?php }*/ ?>
                 </tbody>
             </table>
             <form action="index.php?c=linhaObra&a=selectServico&idFolhaObra=<?=$fo->id?>" method="POST">
                 <div class="row">
                     <div class="col-2">
-                        <input type="text" class="form-control" placeholder="REF">
+                        <input type="text" class="form-control" name="referencia" placeholder="REF">
                     </div>
                     <div class="col-2">
                         <button type="submit" class="btn btn-primary btn-block">Select</button>

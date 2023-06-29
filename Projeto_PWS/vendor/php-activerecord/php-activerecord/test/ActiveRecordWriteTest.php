@@ -157,7 +157,7 @@ class ActiveRecordWriteTest extends DatabaseTest
     public function test_update_attribute()
     {
         $book = Book::find(1);
-        $new_name = 'some stupid self-help user';
+        $new_name = 'some stupid self-help book';
         $book->update_attribute('name', $new_name);
 
         $this->assert_same($new_name, $book->name);

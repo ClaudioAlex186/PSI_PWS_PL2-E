@@ -52,17 +52,34 @@
                     <th>Preço/Hora</th>
                     <th>Valor Iva</th>
                     <th>Subtotal</th>
+                    <th>User Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
+                <?php /*
+                foreach ($los as $lo){ ?>
+                    <tr>
+                        <td><?=$lo->servico->referencia?></td>
+                        <td><?=$lo->servico->descricao?></td>
+                        <td><?=$lo->quantidade?></td>
+                        <td><?=$lo->servico->precohora?></td>
+                        <td><?=$lo->servico->ivas_id?></td>
+                    </tr>
+                <?php }*/ ?>
+                    <tr>
+                        <form action="index.php?c=linhaObra&a=store" method="POST">
+                            <input type="hidden" name="servicos_id" value="<?=$servico->id ?>">
+                            <input type="hidden" name="folhaobras_id" value="<?=$fo->id ?>">
+                            <td><?=$servico->referencia?></td>
+                            <td><?=$servico->descricao?></td>
+                            <td class="col-4"><input type="number" name="quantidade" value="1" class="form-control col-4"></td>
+                            <td><?=$servico->precohora?></td>
+                            <td><?=$servico->ivas_id?></td>
+                            <td><? $servico->valor ?></td>
+                            <td><div class="row-cols-1 "><input type="submit" class="btn btn-info" value="OK">
+                                    <a href="index.php?c=linhaObra&a=index&idFolhaObra=<?=$fo->id?>" class="btn btn-danger" role="button">Cancel</a></td>
+                        </form>
+                    </tr>
                 </tbody>
             </table>
         </div>

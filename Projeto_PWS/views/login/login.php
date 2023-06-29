@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Log in</title>
+    <title>Projeto PWS | Log in</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -17,7 +17,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="../../index2.html"><b>Admin</b>LTE</a>
+        <a href="../../index2.html"><b>Projeto PWS</b></a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
@@ -26,7 +26,7 @@
 
             <form action="../../index3.html" method="post">
                 <div class="input-group mb-3">
-                    <input type="email" class="form-control" placeholder="Email"><!-- muda type para text -->
+                    <input type="text" class="form-control" placeholder="Username">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-envelope"></span>
@@ -63,11 +63,6 @@
 </div>
 <!-- /.login-box -->
 
-<!-- jQuery -->
-<script src="public/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="public//js/adminlte.min.js"></script>
+
 </body>
 </html>

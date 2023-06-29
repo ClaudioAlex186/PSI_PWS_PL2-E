@@ -6,7 +6,7 @@ class LinhaObraController extends Controller
     public function index($idFolhaObra)
     {
         $fo = Folhaobra::find($idFolhaObra);
-        $client = User::find($fo->client_id);
+        $client = User::find($fo->client_id);// testar $fo->user->username
         $servicos = Servico::all();
         //mostrar a vista index passando os dados por parâmetro
         $this->renderView('linhaObra', 'index',['fo'=>$fo, 'client' => $client,'servicos'=>$servicos]);
@@ -15,31 +15,36 @@ class LinhaObraController extends Controller
 
     public function create($idFolhaObra,$idServico)
     {
-
+        $fo = Folhaobra::find($idFolhaObra);
+        $client = User::find($fo->client_id);
+        $servico = Servico::find($idServico);
+        //mostrar a vista index passando os dados por parâmetro
+        $this->renderView('linhaObra', 'create',['fo'=>$fo, 'client' => $client,'servico'=>$servico]);
 
     }
-    /*
+
     public function store()
     {
-        $lo = new LinhaObra();
-        //$lo->id = ;
-        //$lo->quantidade= ;
+        $lo = new LinhaObra($this->getHTTPPost());
+        $servico = Servico::find($lo->servicos_id);
+        $iva = Iva::find($servico->ivas_id);
 
         //Campos Calculados
-        $lo->valor = $lo->quantidade * preco unit $servicos->precoHora;
-        $lo->valoriva = $lo->valor * taxa iva;
+        $lo->valor = $lo->quantidade * $servico->precohora;
+        $lo->valoriva = ($lo->valor * $iva->percentagem)/100;
         $lo->subtotal = $lo->valor+$lo->valoriva;
+
+
         if($lo->is_valid()) {
             $lo->save();
             $lo->folhaObra->atualizaValores();
             //redirecionar para o index
             $this->redirectToRoute('linhaObra', 'index', [$lo->id]);
         }else {
-            $users = User::all();
             //mostrar vista create passando o modelo como parâmetro
-            $this->renderView('folhaObra', 'selectCliente',['users'=>$users]);
+            $this->renderView('linhaObra', 'index',[$lo->id]);
         }
-    }*/
+    }
 
     public function edit($id)
     {
@@ -58,8 +63,9 @@ class LinhaObraController extends Controller
 
     public function selectServico($idFolhaObra)
     {
+        $fo = Folhaobra::find($idFolhaObra);
         $servicos = Servico::all();
         //mostrar a vista index passando os dados por parâmetro
-        $this->renderView('linhaObra', 'selectServico',['servicos'=>$servicos]);
+        $this->renderView('linhaObra', 'selectServico',['fo'=>$fo,'servicos'=>$servicos]);
     }
 }

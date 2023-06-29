@@ -1,21 +1,12 @@
-<h1>Criar novo user</h1>
+<h1>Criar novo Serviço</h1>
 
-<form action="index.php?c=user&a=store" method="post">
+<form action="index.php?c=servico&a=store" method="post">
 
-    Nome:<input type="text" name="name" value="<?php if(isset($user)) { echo $user->name; }?>"><br>
-    <?php if(isset($user->errors)){ echo $user->errors->on('name'); }?><br>
-    ISBN:<input type="text" name="isbn" value="<?php if(isset($user)) { echo $user->isbn; }?>"><br>
-    <?php if(isset($user->errors)) {
-        if (is_array($user->errors->on('isbn'))) {
-            foreach ($user->errors->on('isbn') as $error) {
-                echo $error . '<br>';
-            }
-        } else {
-            echo $user->errors->on('isbn');
-        }
-    }
-    ?>
+    Referencia:<input type="text" name="referencia" value="<?php if(isset($servico)) { echo $servico->referencia; }?>"><br>
+    Descrição:<input type="text" name="descricao" value="<?php if(isset($servico)) { echo $servico->descricao; }?>"><br>
+    Preco/hora:<input type="text" name="precohora" value="<?php if(isset($servico)) { echo $servico->precohora; }?>"><br>
+    Iva:<input type="text" name="ivas_id" value="<?php if(isset($servico)) { echo $servico->ivas_id; }?>"><br>
     <br>
     <input type="submit" class="btn btn-info" value="OK">
-    <a href="index.php?c=user&a=index" class="btn btn-danger" role="button">Cancel</a>
+    <a href="index.php?c=servico&a=index" class="btn btn-danger" role="button">Cancel</a>
 </form>

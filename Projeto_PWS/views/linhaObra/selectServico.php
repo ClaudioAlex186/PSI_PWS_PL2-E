@@ -15,6 +15,8 @@
         <th>Descrição</th>
         <th>Preço/Hora</th>
         <th>Iva</th>
+        <th>User Actions</th>
+
     </tr>
     </thead>
     <tbody>
@@ -24,7 +26,7 @@
             <td><?=$servico->descricao?></td>
             <td><?=$servico->precohora?></td>
             <td><?=$servico->ivas_id?></td>
-            <td><a href="index.php?c=linhaObra&a=create&idFolhaObra=<?=$folhaobra->id ?>&idServico=<?=$servico->id ?>"
+            <td><a href="index.php?c=linhaObra&a=create&idFolhaObra=<?=$fo->id ?>&idServico=<?=$servico->id ?>"
                    class="btn btn-info" role="button">Selecionar</a></td>
         </tr>
     <?php } ?>

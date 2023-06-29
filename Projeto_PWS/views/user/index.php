@@ -3,23 +3,26 @@
 <div class="row">
     <div class="col-sm-12">
         <table class="table table-striped"><thead><th><h3>Id</h3></th><th><h3>Name</h3></th><th><h3>email</h3>
-            </th><th><h3>nif</h3></th><th><h3>role</h3></th><th><h3>User Actions</h3></th></thead>
+            </th><th><h3>nif</h3></th><th><h3>role</h3></th><th><h3>telefone</h3></th><th><h3>morada</h3></th><th><h3>codigo Postal</h3></th>
+            <th><h3>localidade</h3></th><th><h3>User Actions</h3></th></thead>
             <tbody>
             <?php foreach ($users as $user) { ?>
                 <tr>
                     <td><?=$user->id?></td>
                     <td><?=$user->username?></td>
                     <td><?=$user->email?></td>
-                    <td><?= $user->nif ?></td>
-                    <td><?= $user->role ?></td>
+                    <td><?=$user->nif ?></td>
+                    <td><?=$user->role ?></td>
+                    <td><?=$user->telefone ?></td>
+                    <td><?=$user->morada ?></td>
+                    <td><?=$user->codigopostal ?></td>
+                    <td><?=$user->localidade ?></td>
                     <td>
-                        <a href="index.php?c=book&a=show&id=<?=$user->id ?>"
+                        <a href="index.php?c=user&a=show&id=<?=$user->id ?>"
                            class="btn btn-info" role="button">Show</a>
-                        <a href="index.php?c=chapter&a=index&id=<?=$user->id ?>"
-                           class="btn btn-info" role="button">Chapters</a>
-                        <a href="index.php?c=book&a=edit&id=<?=$user->id ?>"
+                        <a href="index.php?c=user&a=edit&id=<?=$user->id ?>"
                            class="btn btn-info" role="button">Edit</a>
-                        <a href="index.php?c=book&a=delete&id=<?=$user->id ?>"
+                        <a href="index.php?c=user&a=delete&id=<?=$user->id ?>"
                            class="btn btn-warning" role="button">Delete</a>
                     </td>
                 </tr>

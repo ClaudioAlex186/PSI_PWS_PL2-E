@@ -67,7 +67,7 @@ class IvaController extends Controller
             //redirecionar para o index
             $this->redirectToRoute('iva','index');
         } else {
-            $genres = Genre::all();
+
             //mostrar vista edit passando o modelo como parâmetro
             $this->renderView('iva','edit',['iva'=>$iva]);
         }

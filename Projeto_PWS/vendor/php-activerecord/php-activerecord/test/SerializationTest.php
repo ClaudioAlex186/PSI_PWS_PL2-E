@@ -138,7 +138,7 @@ class SerializationTest extends DatabaseTest
         ActiveRecord\ArraySerializer::$include_root = true;
         $book = Book::find(1);
         $array = $book->to_array();
-        $book_attributes = ['user' => $book->attributes()];
+        $book_attributes = ['book' => $book->attributes()];
         $this->assert_equals($book_attributes, $array);
     }
 

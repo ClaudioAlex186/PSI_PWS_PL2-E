@@ -12,7 +12,7 @@ class UserController extends Controller
 
     public function show($id)
     {
-        $user = Book::find($id);
+        $user = User::find($id);
         if (is_null($user)) {
             //TODO redirect to standard error page
             $this->renderView('bo','erro');
@@ -47,7 +47,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         if (isset($user->errors)) {
-            echo $user->errors->on('name');
+            echo $user->errors->on('username');
         }
         if (is_null($user)) {
             //TODO redirect to standard error page
@@ -67,7 +67,6 @@ class UserController extends Controller
             //redirecionar para o index
             $this->redirectToRoute('user','index');
         } else {
-            $genres = Genre::all();
             //mostrar vista edit passando o modelo como parâmetro
             $this->renderView('user','edit',['user'=>$user]);
         }

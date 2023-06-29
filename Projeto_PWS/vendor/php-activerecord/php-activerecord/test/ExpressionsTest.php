@@ -29,15 +29,15 @@ class ExpressionsTest extends SnakeCase_PHPUnit_Framework_TestCase
 
     public function test_multiple_variables()
     {
-        $c = new Expressions(null, 'name=? and user=?', 'Tito', 'Sharks');
-        $this->assert_equals('name=? and user=?', $c->to_s());
+        $c = new Expressions(null, 'name=? and book=?', 'Tito', 'Sharks');
+        $this->assert_equals('name=? and book=?', $c->to_s());
         $this->assert_equals(['Tito', 'Sharks'], $c->values());
     }
 
     public function test_to_string()
     {
-        $c = new Expressions(null, 'name=? and user=?', 'Tito', 'Sharks');
-        $this->assert_equals('name=? and user=?', $c->to_s());
+        $c = new Expressions(null, 'name=? and book=?', 'Tito', 'Sharks');
+        $this->assert_equals('name=? and book=?', $c->to_s());
     }
 
     public function test_to_string_with_array_variable()
@@ -48,9 +48,9 @@ class ExpressionsTest extends SnakeCase_PHPUnit_Framework_TestCase
 
     public function test_to_string_with_null_options()
     {
-        $c = new Expressions(null, 'name=? and user=?', 'Tito', 'Sharks');
+        $c = new Expressions(null, 'name=? and book=?', 'Tito', 'Sharks');
         $x = null;
-        $this->assert_equals('name=? and user=?', $c->to_s(false, $x));
+        $this->assert_equals('name=? and book=?', $c->to_s(false, $x));
     }
 
     /**
